@@ -112,7 +112,7 @@ in
       }
     ];
 
-    services.automysqlbackup.config = mapAttrs (name: mkDefault) {
+    services.automysqlbackup.settings = mapAttrs (name: mkDefault) {
       mysql_dump_username = user;
       mysql_dump_host = "localhost";
       mysql_dump_socket = "/run/mysqld/mysqld.sock";

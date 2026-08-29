@@ -421,7 +421,7 @@ in
 
     services.dovecot2 = lib.mkIf cfg.provision.localMail.enable {
       enable = true;
-      protocols = [ "imap" ];
+      settings.protocols = [ "imap" ];
     };
 
     services.postfix = lib.mkIf cfg.provision.localMail.enable {

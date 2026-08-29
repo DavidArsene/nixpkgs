@@ -70,12 +70,10 @@ in
     services.dnsmasq = mkIf cfg.dnsmasq {
       enable = true;
       resolveLocalQueries = true;
-      servers = [
-        "/${cfg.domain}/127.0.0.1#5300"
-      ];
       settings = {
         bind-interfaces = true;
         listen-address = "127.0.0.1";
+        server = [ "/${cfg.domain}/127.0.0.1#5300" ];
       };
     };
 
